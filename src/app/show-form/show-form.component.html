@@ -1,0 +1,8 @@
+<div *ngIf="form.name!=''">
+    <h1>Formulario lleno</h1>
+    <div style="border-bottom: 1px black solid">
+        <section style="display: flex; padding: 10px;"><p style="font-weight: bold;">Nombre: </p><div style="display: inline-block; margin: 16px 0px 0px 5px">{{ form.name }}</div></section>
+        <section style="display: flex; padding: 10px;"><p style="font-weight: bold;">Email: </p><div style="display: inline-block; margin: 16px 0px 0px 5px">{{ form.email }}</div></section>
+        <section style="display: flex; padding: 10px;"><p style="font-weight: bold;">Mensaje: </p><div style="display: inline-block; margin: 16px 0px 0px 5px">{{ form.message }}</div></section>
+    </div>
+</div>

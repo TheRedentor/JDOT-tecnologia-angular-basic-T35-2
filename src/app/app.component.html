@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>T35_2</title>
+</head>
+<body>
+  <div>
+    <h1>Formulario de contacto</h1>
+    <section style="display: flex; padding: 10px; font-weight: bold;"><p style="margin-right:20px">Nombre</p><input placeholder="Nombre y apellido" type="text" [(ngModel)]="name"></section>
+    <section *ngIf="!nameNotNull" style="display: flex; padding: 10px; color: red;"><p>Introduzca su nombre y apellido</p></section>
+    <section style="display: flex; padding: 10px; font-weight: bold;"><p style="margin-right:20px">Email</p><input placeholder="ejemplo@dominio.com" type="text" [(ngModel)]="email" ></section>
+    <section *ngIf="!emailNotNull" style="display: flex; padding: 10px; color: red;"><p>Introduzca un email válido</p></section>
+    <section style="display: flex; padding: 10px; font-weight: bold;"><p style="margin-right:20px">Mensaje</p><input type="text" [(ngModel)]="message"></section>
+    <section *ngIf="!messageNotNull" style="display: flex; padding: 10px; color: red;"><p>Introduzca un mensaje</p></section>
+    <section style="display: flex; padding: 10px; font-weight: bold;"><p style="margin-right:20px">{{ firstNumber }} + {{ secondNumber }} = ?</p><input placeholder="Respuesta" type="text" [(ngModel)]="result"></section>
+    <section *ngIf="!resultIsCorrect" style="display: flex; padding: 10px; color: red;"><p>Validación anti-spam incorrecta</p></section>
+    <button style="padding: 10px;" (click)="createForm()">Enviar</button>
+  </div>
+  <app-show-form [form]="created_form"></app-show-form>
+</body>
+</html>
